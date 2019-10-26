@@ -57,7 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("localhost")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("192.168.1.112")>  _
         Public ReadOnly Property Server() As String
             Get
                 Return CType(Me("Server"),String)
@@ -97,7 +97,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("hsp123")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("dbxroothsp123")>  _
         Public ReadOnly Property Password() As String
             Get
                 Return CType(Me("Password"),String)

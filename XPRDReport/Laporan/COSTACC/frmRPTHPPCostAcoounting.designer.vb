@@ -117,9 +117,9 @@ Partial Class frmRPTHPPCostAcoounting
         'cboUnitProduksi
         '
         Me.cboUnitProduksi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboUnitProduksi.DropDownWidth = 175
+        Me.cboUnitProduksi.DropDownWidth = 250
         Me.cboUnitProduksi.Name = "cboUnitProduksi"
-        Me.cboUnitProduksi.Size = New System.Drawing.Size(175, 31)
+        Me.cboUnitProduksi.Size = New System.Drawing.Size(250, 31)
         Me.cboUnitProduksi.Visible = False
         '
         'btRefresh

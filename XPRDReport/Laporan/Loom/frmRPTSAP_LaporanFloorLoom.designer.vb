@@ -29,6 +29,8 @@ Partial Class frmRPTSAP_LaporanFloorLoom
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRefresh = New System.Windows.Forms.ToolStripButton()
         Me.RPT = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.cboLaporan = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.Toolbar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,7 +38,7 @@ Partial Class frmRPTSAP_LaporanFloorLoom
         '
         Me.Toolbar.BackColor = System.Drawing.SystemColors.Control
         Me.Toolbar.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator2, Me.btRefresh})
+        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator2, Me.cboLaporan, Me.ToolStripSeparator1, Me.btRefresh})
         Me.Toolbar.Location = New System.Drawing.Point(0, 0)
         Me.Toolbar.Name = "Toolbar"
         Me.Toolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -97,6 +99,18 @@ Partial Class frmRPTSAP_LaporanFloorLoom
         Me.RPT.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         Me.RPT.ToolPanelWidth = 250
         '
+        'cboLaporan
+        '
+        Me.cboLaporan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboLaporan.Items.AddRange(New Object() {"R200181", "R200182"})
+        Me.cboLaporan.Name = "cboLaporan"
+        Me.cboLaporan.Size = New System.Drawing.Size(121, 31)
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 31)
+        '
         'frmRPTSAP_LaporanFloorLoom
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -122,5 +136,7 @@ Partial Class frmRPTSAP_LaporanFloorLoom
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripLabel3 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripLabel4 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents cboLaporan As System.Windows.Forms.ToolStripComboBox
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
 
 End Class

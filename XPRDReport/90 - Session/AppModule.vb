@@ -413,6 +413,18 @@
         oApp(0) = "CACC006"
         oApp(1) = "CostACC | Lap. Perhitungan Harga Pokok Produksi"
 
+        oApp = oDT.Rows.Add()
+        oApp(0) = "CACC007"
+        oApp(1) = "CostACC | Lap. Stock Opname"
+
+        oApp = oDT.Rows.Add()
+        oApp(0) = "CACC008"
+        oApp(1) = "CostACC | Lap. Perbandingan SAP vs Console"
+
+        oApp = oDT.Rows.Add()
+        oApp(0) = "CACC009"
+        oApp(1) = "CostACC | Lap. Master BOM"
+
         '*************************************************************************
         'Analisa
         '*************************************************************************
@@ -449,6 +461,19 @@
         oApp = oDT.Rows.Add()
         oApp(0) = "CB001"
         oApp(1) = "Cemment Bag | Lap. Analisa Roll to Pcs Cemment Bag"
+
+        '*************************************************************************
+        'BallPress
+        '*************************************************************************
+        oApp = oDT.Rows.Add()
+        oApp(0) = "BL001"
+        oApp(1) = "BallPress | Lap. Transform Ball to Pcs"
+
+        oApp = oDT.Rows.Add()
+        oApp(0) = "BL002"
+        oApp(1) = "BallPress | Lap. Serah Terima Ballpress"
+
+
     End Function
 
     'Application Modul 
@@ -671,6 +696,18 @@
                 AppForm = New frmRPTKartuStockSupportPPIC
             Case "AN003"
                 AppForm = New FrmRpt_BSvsAfval
+            Case "CACC007"
+                AppForm = New FrmRpt_StockOpname
+            Case "CACC008"
+                AppForm = New frmRPT_cosacc_SAPVsConsole
+            Case "CACC009"
+                AppForm = New frmListBom
+            Case "BL001"
+                AppForm = New frmRPTTransformBalltoPcs
+            Case "BL002"
+                AppForm = New frmStockBallpress
+
+
         End Select
         Form = AppForm
 

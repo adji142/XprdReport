@@ -23,7 +23,6 @@ Public Class frmRPT110_230_GudangBenang
         txtTglAkhir.Width = 95
 
         FillCombo()
-        FillComboMesin()
 
         cboLaporan.SelectedIndex = 0
     End Sub
@@ -34,16 +33,12 @@ Public Class frmRPT110_230_GudangBenang
         Dim Drow As DataRow
 
         'Unit Produksi
-        Dim DaftarUnitProduksi As New DaftarUnitProduksi(ActiveSession)
+        Dim DaftarUnitProduksi As New DaftarLokasi(ActiveSession)
 
         DS = DaftarUnitProduksi.Read("%")
-        cboKodeUnit.ComboBox.DataSource = DS.Tables("View")
-        cboKodeUnit.ComboBox.DisplayMember = "Unit Produksi"
-        cboKodeUnit.ComboBox.ValueMember = "Kode"
-
-        Drow = DS.Tables("View").Rows.Add
-        Drow("Kode") = ""
-        Drow("Unit Produksi") = "<SEMUA UNIT PRODUKSI>"
+        cboKodeLokasi.ComboBox.DataSource = DS.Tables("View")
+        cboKodeLokasi.ComboBox.DisplayMember = "Nama Lokasi"
+        cboKodeLokasi.ComboBox.ValueMember = "Kode"
 
         'Shift Produksi
         Dim DaftarShiftProduksi As New DaftarShiftProduksi(ActiveSession)
@@ -57,50 +52,9 @@ Public Class frmRPT110_230_GudangBenang
         Drow("Kode") = ""
         Drow("Nama Shift") = "<SEMUA>"
 
-        cboKodeUnit.ComboBox.SelectedIndex = cboKodeUnit.Items.Count - 1
+        cboKodeLokasi.ComboBox.SelectedIndex = cboKodeLokasi.Items.Count - 1
         cboShift.ComboBox.SelectedIndex = cboShift.Items.Count - 1
 
-    End Sub
-
-    Private Sub FillComboMesin()
-        If cboKodeUnit.ComboBox.SelectedIndex <> -1 Then
-            'Mesin Produksi
-            Dim DaftarMesin As New DaftarMesin(ActiveSession)
-            Dim DS As DataSet
-            Dim Drow As DataRow
-
-            DS = New DataSet
-            DS = DaftarMesin.Read("%", cboKodeUnit.ComboBox.SelectedValue.ToString)
-            cboMesin.ComboBox.DataSource = DS.Tables("View")
-            cboMesin.ComboBox.DisplayMember = "Nama Mesin"
-            cboMesin.ComboBox.ValueMember = "Kode"
-
-            Drow = DS.Tables("View").Rows.Add
-            Drow("Kode") = ""
-            Drow("Nama Mesin") = "<SEMUA>"
-
-        Else
-            Dim DS As New DataSet
-            Dim Drow As DataRow
-
-            DS.Tables.Add("View")
-            DS.Tables("View").Columns.Add("Kode")
-            DS.Tables("View").Columns.Add("Nama Mesin")
-
-            cboMesin.ComboBox.DataSource = DS.Tables("View")
-            cboMesin.ComboBox.DisplayMember = "Nama Mesin"
-            cboMesin.ComboBox.ValueMember = "Kode"
-
-            Drow = DS.Tables("View").Rows.Add
-            Drow("Kode") = ""
-            Drow("Nama Mesin") = "<SEMUA>"
-        End If
-
-        cboMesin.ComboBox.SelectedIndex = cboMesin.Items.Count - 1
-    End Sub
-
-    Private Sub Data_Change(sender As Object, e As EventArgs) Handles cboKodeUnit.SelectedIndexChanged
-        FillComboMesin()
     End Sub
 
     'Tampilkan Laporan
@@ -139,9 +93,8 @@ Public Class frmRPT110_230_GudangBenang
         'Parameter
         RPTObject.ParameterFields("TglAwal").CurrentValues.AddValue(txtTglAwal.Value.Date)
         RPTObject.ParameterFields("TglAkhir").CurrentValues.AddValue(txtTglAkhir.Value.Date)
-        RPTObject.ParameterFields("Shift").CurrentValues.AddValue(cboShift.ComboBox.SelectedValue)
-        RPTObject.ParameterFields("KodeUnit").CurrentValues.AddValue(cboKodeUnit.ComboBox.SelectedValue)
-        RPTObject.ParameterFields("Mesin").CurrentValues.AddValue(cboMesin.ComboBox.SelectedValue)
+        RPTObject.ParameterFields("KodeShift").CurrentValues.AddValue(cboShift.ComboBox.SelectedValue)
+        RPTObject.ParameterFields("LokasiTujuan").CurrentValues.AddValue(cboKodeLokasi.ComboBox.SelectedValue)
 
         'Informasi
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"

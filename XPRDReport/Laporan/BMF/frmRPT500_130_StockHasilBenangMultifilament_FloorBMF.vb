@@ -5,6 +5,7 @@ Imports XPRDSystem.HSP.Data
 Imports XPRDReport.HSP.Data
 
 Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
+    Private ID As String
 
     Private Sub FillCombo()
         Dim DaftarLokasiProduksi As New DaftarLokasi(ActiveSession)
@@ -22,6 +23,7 @@ Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
     End Sub
 
     Private Sub frmReport_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        ID = ActiveSession.KodeUser & Now.ToString("ddMMyyyyHHmmss") & cboKodeLokasi.ComboBox.SelectedValue & ActiveSession.KodeUser
 
         RPT.ShowGroupTreeButton = False
 
@@ -41,7 +43,7 @@ Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         Dim TempStock As New TempStockSAP
 
         'Hapus Temporary
-        DaftarTempStock.Delete()
+        DaftarTempStock.Delete(ID)
 
         Dim Record As Integer = DS.Tables("View").Rows.Count
         ProgressBar.Visible = True
@@ -49,6 +51,7 @@ Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         ProgressBar.Maximum = Record
 
         For Each DR As DataRow In DS.Tables("View").Rows
+            TempStock.ID = ID
             TempStock.KodeItem = DR("KodeItem")
             TempStock.NamaItem = DR("NamaItem")
             TempStock.KodeProduksi = DR("KodeProduksi")
@@ -100,7 +103,7 @@ Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
             DataTable.LogOnInfo.ConnectionInfo = Server
             DataTable.ApplyLogOnInfo(DataTable.LogOnInfo)
         Next
-
+        RPTObject.ParameterFields("ID").CurrentValues.AddValue(ID)
         'Informasi
         RPTObject.DataDefinition.FormulaFields("UserID").Text = "'" + ActiveSession.KodeUser + "'"
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"

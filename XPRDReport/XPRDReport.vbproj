@@ -5,12 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1B126AAB-2D4A-4DA0-B4C5-C9A8CCA5B533}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <StartupObject>XPRDReport.My.MyApplication</StartupObject>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
     <RootNamespace>XPRDReport</RootNamespace>
     <AssemblyName>XPRDReport</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -110,6 +111,7 @@
     <Compile Include="11 - Data Models\TempMasterItem.vb" />
     <Compile Include="11 - Data Models\TempMutasiBenang.vb" />
     <Compile Include="11 - Data Models\TempStockSAP.vb" />
+    <Compile Include="11 - Data Models\Tmp_Transaksi.vb" />
     <Compile Include="11 - Data Models\X_PemakaianBahan.vb" />
     <Compile Include="11 - Data Models\x_Tmp_ItemRoll.vb" />
     <Compile Include="80 - General\frmLookup.designer.vb">
@@ -185,6 +187,18 @@
     <Compile Include="Laporan\ballpress\frmRPT410_100_ReturHasilProduksi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Laporan\ballpress\frmRPTTransformBalltoPcs.designer.vb">
+      <DependentUpon>frmRPTTransformBalltoPcs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\ballpress\frmRPTTransformBalltoPcs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\ballpress\frmStockBallpress.designer.vb">
+      <DependentUpon>frmStockBallpress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\ballpress\frmStockBallpress.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Laporan\BMF\frmRPT500_100_BenangMultifilament.designer.vb">
       <DependentUpon>frmRPT500_100_BenangMultifilament.vb</DependentUpon>
     </Compile>
@@ -213,6 +227,12 @@
       <DependentUpon>frmRPTAnalisaRolltoPCSCemmentBag.vb</DependentUpon>
     </Compile>
     <Compile Include="Laporan\CemmentBag\frmRPTAnalisaRolltoPCSCemmentBag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\COSTACC\frmListBom.designer.vb">
+      <DependentUpon>frmListBom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\COSTACC\frmListBom.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laporan\COSTACC\frmListBomWO.designer.vb">
@@ -255,6 +275,18 @@
       <DependentUpon>FrmRpt_BSvsAfval.vb</DependentUpon>
     </Compile>
     <Compile Include="Laporan\COSTACC\FrmRpt_BSvsAfval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\COSTACC\frmRPT_cosacc_SAPVsConsole.designer.vb">
+      <DependentUpon>frmRPT_cosacc_SAPVsConsole.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\COSTACC\frmRPT_cosacc_SAPVsConsole.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\COSTACC\FrmRpt_StockOpname.designer.vb">
+      <DependentUpon>FrmRpt_StockOpname.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\COSTACC\FrmRpt_StockOpname.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laporan\Cutting\frmRPT321_100_Cutting.designer.vb">
@@ -683,6 +715,12 @@
     <Compile Include="Laporan\Loom\frmRPT2100_HasilCircularLoom.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Laporan\Loom\frmRPT210_100_HasilRoll.designer.vb">
+      <DependentUpon>frmRPT210_100_HasilRoll.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\Loom\frmRPT210_100_HasilRoll.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Laporan\Loom\frmRptRDP2200_LapOprasionalProduksiCLoom.Designer.vb">
       <DependentUpon>frmRptRDP2200_LapOprasionalProduksiCLoom.vb</DependentUpon>
     </Compile>
@@ -787,6 +825,7 @@
     <Compile Include="SAP Class Interfaces\SAPPPIC.vb" />
     <Compile Include="SAP Class Interfaces\SAPRouting.vb" />
     <Compile Include="SAP Class Interfaces\SAPSalesOrder.vb" />
+    <Compile Include="SAP Class Interfaces\SAPTransaction.vb" />
     <Compile Include="SAP Class Interfaces\SAPWorkOrder.vb" />
     <Compile Include="SAP Class Interfaces\SDKConnection.vb" />
   </ItemGroup>
@@ -824,6 +863,12 @@
     <EmbeddedResource Include="Laporan\ballpress\frmRPT410_100_ReturHasilProduksi.resx">
       <DependentUpon>frmRPT410_100_ReturHasilProduksi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\ballpress\frmRPTTransformBalltoPcs.resx">
+      <DependentUpon>frmRPTTransformBalltoPcs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\ballpress\frmStockBallpress.resx">
+      <DependentUpon>frmStockBallpress.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Laporan\BMF\frmRPT500_100_BenangMultifilament.resx">
       <DependentUpon>frmRPT500_100_BenangMultifilament.vb</DependentUpon>
     </EmbeddedResource>
@@ -838,6 +883,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan\CemmentBag\frmRPTAnalisaRolltoPCSCemmentBag.resx">
       <DependentUpon>frmRPTAnalisaRolltoPCSCemmentBag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\COSTACC\frmListBom.resx">
+      <DependentUpon>frmListBom.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan\COSTACC\frmListBomWO.resx">
       <DependentUpon>frmListBomWO.vb</DependentUpon>
@@ -859,6 +907,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan\COSTACC\FrmRpt_BSvsAfval.resx">
       <DependentUpon>FrmRpt_BSvsAfval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\COSTACC\frmRPT_cosacc_SAPVsConsole.resx">
+      <DependentUpon>frmRPT_cosacc_SAPVsConsole.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\COSTACC\FrmRpt_StockOpname.resx">
+      <DependentUpon>FrmRpt_StockOpname.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan\Cutting\frmRPT321_100_Cutting.resx">
       <DependentUpon>frmRPT321_100_Cutting.vb</DependentUpon>
@@ -1072,6 +1126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan\Loom\frmRPT2100_HasilCircularLoom.resx">
       <DependentUpon>frmRPT2100_HasilCircularLoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\Loom\frmRPT210_100_HasilRoll.resx">
+      <DependentUpon>frmRPT210_100_HasilRoll.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan\Loom\frmRPTSAP_LaporanFloorLoom.resx">
       <DependentUpon>frmRPTSAP_LaporanFloorLoom.vb</DependentUpon>

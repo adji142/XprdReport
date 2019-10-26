@@ -23,11 +23,43 @@ Public Class frmRPT2100_HasilCircularLoom
         txtTglAkhir.CustomFormat = "dd/MM/yyyy"
         txtTglAkhir.Width = 95
         txtTglAkhir.Value = Now.Date
-
+        FillCombo()
         cboLaporan.SelectedIndex = 0
+        cboStatus.SelectedIndex = 0
+    End Sub
+    Private Sub FillCombo()
+        Dim DS As DataSet
+        Dim Drow As DataRow
+
+        'Shift Produksi
+        Dim DaftarShiftProduksi As New DaftarShiftProduksi(ActiveSession)
+
+        DS = DaftarShiftProduksi.Read("%")
+        cboShift.ComboBox.DataSource = DS.Tables("View")
+        cboShift.ComboBox.DisplayMember = "Nama Shift"
+        cboShift.ComboBox.ValueMember = "Kode"
+
+        Drow = DS.Tables("View").Rows.Add
+        Drow("Kode") = ""
+        Drow("Nama Shift") = "-"
+
+        cboShift.SelectedIndex = cboShift.Items.Count - 1
+
+        'Grup Produksi
+        Dim DaftarGrupProduksi As New DaftarGrupProduksi(ActiveSession)
+
+        DS = DaftarGrupProduksi.Read("%")
+        cboGroup.ComboBox.DataSource = DS.Tables("View")
+        cboGroup.ComboBox.DisplayMember = "Grup Produksi"
+        cboGroup.ComboBox.ValueMember = "Kode"
+
+        Drow = DS.Tables("View").Rows.Add
+        Drow("Kode") = ""
+        Drow("Grup Produksi") = "-"
+
+        cboGroup.SelectedIndex = cboGroup.Items.Count - 1
 
     End Sub
-
     'Tampilkan Laporan
     Private Sub btRefresh_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btRefresh.Click
         Dim Server As New ConnectionInfo
@@ -52,20 +84,30 @@ Public Class frmRPT2100_HasilCircularLoom
 
         'Report
         Select Case cboLaporan.SelectedIndex + 1
+            'Case 1
+            '    RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2801_LaporanHasilProduksiCloom.RPT")
+            'Case 2
+            '    RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2802_LaporanHasilProduksiCloom.RPT")
+            'Case 3
+            '    RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2803_LaporanHasilProduksiCloom.RPT")
+            'Case 4
+            '    RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2804_LaporanHasilProduksiCloom.RPT")
+            'Case 5
+            '    RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2806_LaporanHasilProduksiCloom.RPT")
+            'Case 6
+            '    RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2807_LaporanHasilProduksiCloom.RPT")
+            'Case 7
+            '    RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2808_LaporanHasilProduksiCloom.RPT")
             Case 1
-                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2801_LaporanHasilProduksiCloom.RPT")
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt210101_HasilRoll.RPT")
             Case 2
-                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2802_LaporanHasilProduksiCloom.RPT")
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt210102_HasilRoll.RPT")
             Case 3
-                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2803_LaporanHasilProduksiCloom.RPT")
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt210103_HasilRoll.RPT")
             Case 4
-                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2804_LaporanHasilProduksiCloom.RPT")
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt210104_HasilRoll.RPT")
             Case 5
-                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2806_LaporanHasilProduksiCloom.RPT")
-            Case 6
-                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2807_LaporanHasilProduksiCloom.RPT")
-            Case 7
-                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt2808_LaporanHasilProduksiCloom.RPT")
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt210105_HasilRoll.RPT")
         End Select
 
         For Each DataTable In RPTObject.Database.Tables
@@ -76,7 +118,13 @@ Public Class frmRPT2100_HasilCircularLoom
         'Parameter
         RPTObject.ParameterFields("TglAwal").CurrentValues.AddValue(txtTglAwal.Value.Date)
         RPTObject.ParameterFields("TglAkhir").CurrentValues.AddValue(txtTglAkhir.Value.Date)
-
+        RPTObject.ParameterFields("KodeShift").CurrentValues.AddValue(cboShift.ComboBox.SelectedValue)
+        RPTObject.ParameterFields("KodeGroup").CurrentValues.AddValue(cboGroup.ComboBox.SelectedValue)
+        If cboStatus.ComboBox.SelectedIndex = 0 Then
+            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(0)
+        Else
+            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(1)
+        End If
         'Informasi
         RPTObject.DataDefinition.FormulaFields("UserID").Text = "'" + ActiveSession.KodeUser + "'"
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"

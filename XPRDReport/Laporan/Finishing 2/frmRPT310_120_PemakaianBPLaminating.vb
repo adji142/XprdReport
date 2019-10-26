@@ -44,15 +44,28 @@ Public Class frmRPT310_120_PemakaianBPLaminating
         DS = DaftarUnitProduksi.Read("%", UnitProduksi.enumKelompokProduksi.LaminatingRoll)
 
         If DS.Tables(0).Rows.Count Then
-            KodeUnit = DS.Tables(0).Rows(0).Item("Kode")
+            If cboLaporan.SelectedIndex = 3 Then
+                KodeUnit = DS.Tables(0).Rows(0).Item("Unit SAP")
+            Else
+                KodeUnit = DS.Tables(0).Rows(0).Item("Kode")
+            End If
         End If
         'Setting Koneksi Database
-        With Server
-            .ServerName = "DRIVER={MySQL ODBC 5.3 ANSI Driver};SERVER=" + DBX.Server + "; PORT = " + DBX.Port.ToString + "; "
-            .DatabaseName = DBX.Database
-            .UserID = DBX.UserID
-            .Password = DBX.Password
-        End With
+        If cboLaporan.SelectedIndex = 3 Then
+            With Server
+                .ServerName = "192.168.1.222:30015"
+                .DatabaseName = "HARDO_LIVE"
+                .UserID = "SYSTEM"
+                .Password = "sys825050SYS"
+            End With
+        Else
+            With Server
+                .ServerName = "DRIVER={MySQL ODBC 5.3 ANSI Driver};SERVER=" + DBX.Server + "; PORT = " + DBX.Port.ToString + "; "
+                .DatabaseName = DBX.Database
+                .UserID = DBX.UserID
+                .Password = DBX.Password
+            End With
+        End If
         '-----------------------------------------------------------------------------------------
 
         Dim RPTObject As New ReportDocument
@@ -65,6 +78,8 @@ Public Class frmRPT310_120_PemakaianBPLaminating
                 RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\RPT310122_PemakaianBPLaminating.RPT")
             Case 3
                 RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\RPT310123_PemakaianBPLaminating.RPT")
+            Case 4
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\RPT310124_PemakaianBPLaminating.RPT")
         End Select
 
         For Each DataTable In RPTObject.Database.Tables

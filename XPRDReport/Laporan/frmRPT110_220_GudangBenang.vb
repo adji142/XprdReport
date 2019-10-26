@@ -36,16 +36,12 @@ Public Class frmRPT110_220_GudangBenang
         Dim Drow As DataRow
 
         'Unit Produksi
-        Dim DaftarUnitProduksi As New DaftarUnitProduksi(ActiveSession)
+        Dim DaftarUnitProduksi As New DaftarLokasi(ActiveSession)
 
         DS = DaftarUnitProduksi.Read("%")
-        cboKodeUnit.ComboBox.DataSource = DS.Tables("View")
-        cboKodeUnit.ComboBox.DisplayMember = "Unit Produksi"
-        cboKodeUnit.ComboBox.ValueMember = "Kode"
-
-        Drow = DS.Tables("View").Rows.Add
-        Drow("Kode") = ""
-        Drow("Unit Produksi") = "<SEMUA UNIT PRODUKSI>"
+        cboKodeLokasi.ComboBox.DataSource = DS.Tables("View")
+        cboKodeLokasi.ComboBox.DisplayMember = "Nama Lokasi"
+        cboKodeLokasi.ComboBox.ValueMember = "Kode"
 
         'Shift Produksi
         Dim DaftarShiftProduksi As New DaftarShiftProduksi(ActiveSession)
@@ -59,7 +55,7 @@ Public Class frmRPT110_220_GudangBenang
         Drow("Kode") = ""
         Drow("Nama Shift") = "<SEMUA>"
 
-        cboKodeUnit.ComboBox.SelectedIndex = cboKodeUnit.Items.Count - 1
+        cboKodeLokasi.ComboBox.SelectedIndex = cboKodeLokasi.Items.Count - 1
         cboShift.ComboBox.SelectedIndex = cboShift.Items.Count - 1
     End Sub
 
@@ -89,7 +85,7 @@ Public Class frmRPT110_220_GudangBenang
         'Report
         Select Case cboLaporan.SelectedIndex + 1
             Case 1
-                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt110112_GudangBenang.RPT") 'rpt110221_GudangBenang
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt110112_GudangBenang_V2.RPT") 'rpt110221_GudangBenang
         End Select
 
         For Each DataTable In RPTObject.Database.Tables
@@ -100,7 +96,7 @@ Public Class frmRPT110_220_GudangBenang
         'Parameter
         RPTObject.ParameterFields("TglAwal").CurrentValues.AddValue(txttglawal.Value.Date)
         RPTObject.ParameterFields("TglAkhir").CurrentValues.AddValue(txttglakhir.Value.Date)
-        RPTObject.ParameterFields("KodeUnit").CurrentValues.AddValue(cboKodeUnit.ComboBox.SelectedValue)
+        RPTObject.ParameterFields("KodeLokasi").CurrentValues.AddValue(cboKodeLokasi.ComboBox.SelectedValue)
         RPTObject.ParameterFields("Shift").CurrentValues.AddValue(cboShift.ComboBox.SelectedValue)
 
         'Informasi

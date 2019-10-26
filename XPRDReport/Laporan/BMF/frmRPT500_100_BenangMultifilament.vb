@@ -30,6 +30,7 @@ Public Class frmRPT500_100_BenangMultifilament
         FillComboMesin()
 
         cboTipeLaporan.SelectedIndex = 0
+        cboStatus.SelectedIndex = 0
     End Sub
 
     'Fill Combo
@@ -156,7 +157,11 @@ Public Class frmRPT500_100_BenangMultifilament
         RPTObject.ParameterFields("TglAkhir").CurrentValues.AddValue(txtTglAkhir.Value.Date)
         RPTObject.ParameterFields("Mesin").CurrentValues.AddValue(cboMesin.ComboBox.SelectedValue)
         RPTObject.ParameterFields("Shift").CurrentValues.AddValue(cboShift.ComboBox.SelectedValue)
-
+        If cboStatus.ComboBox.SelectedIndex = 0 Then
+            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(0)
+        Else
+            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(1)
+        End If
         'Informasi
         RPTObject.DataDefinition.FormulaFields("UserID").Text = "'" + ActiveSession.KodeUser + "'"
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"

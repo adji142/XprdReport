@@ -38,6 +38,9 @@ Partial Class frmRPT311_100_Slitting
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRefresh = New System.Windows.Forms.ToolStripButton()
         Me.RPT = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.cboStatus = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.Toolbar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,7 +48,7 @@ Partial Class frmRPT311_100_Slitting
         '
         Me.Toolbar.BackColor = System.Drawing.SystemColors.Control
         Me.Toolbar.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator6, Me.ToolStripLabel7, Me.cboShift, Me.ToolStripSeparator3, Me.ToolStripLabel5, Me.cboGrup, Me.ToolStripSeparator2, Me.btRefresh})
+        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator6, Me.ToolStripLabel7, Me.cboShift, Me.ToolStripSeparator3, Me.ToolStripLabel5, Me.cboGrup, Me.ToolStripSeparator2, Me.ToolStripLabel2, Me.cboStatus, Me.ToolStripSeparator4, Me.btRefresh})
         Me.Toolbar.Location = New System.Drawing.Point(0, 0)
         Me.Toolbar.Name = "Toolbar"
         Me.Toolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -158,6 +161,24 @@ Partial Class frmRPT311_100_Slitting
         Me.RPT.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         Me.RPT.ToolPanelWidth = 250
         '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(90, 28)
+        Me.ToolStripLabel2.Text = "Status Transaksi"
+        '
+        'cboStatus
+        '
+        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatus.Items.AddRange(New Object() {"Aktif", "Cancel"})
+        Me.cboStatus.Name = "cboStatus"
+        Me.cboStatus.Size = New System.Drawing.Size(121, 31)
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 31)
+        '
         'frmRPT311_100_Slitting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -180,7 +201,6 @@ Partial Class frmRPT311_100_Slitting
     Friend WithEvents Toolbar As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripLabel3 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripLabel4 As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripLabel7 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents cboShift As System.Windows.Forms.ToolStripComboBox
@@ -192,5 +212,9 @@ Partial Class frmRPT311_100_Slitting
     Friend WithEvents cboLaporan As System.Windows.Forms.ToolStripComboBox
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripLabel2 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents cboStatus As System.Windows.Forms.ToolStripComboBox
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Private WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
 
 End Class

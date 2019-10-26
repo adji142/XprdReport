@@ -77,11 +77,6 @@ Public Class frmRPT100_140_Extruder
         'Parameter
         RPTObject.ParameterFields("TglAwal").CurrentValues.AddValue(txtTglAwal.Value.Date)
         RPTObject.ParameterFields("TglAkhir").CurrentValues.AddValue(txtTglAkhir.Value.Date)
-        If CboStatus.ComboBox.SelectedIndex = 0 Then
-            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(0)
-        Else
-            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(1)
-        End If
         'Informasi
         RPTObject.DataDefinition.FormulaFields("UserID").Text = "'" + ActiveSession.KodeUser + "'"
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"

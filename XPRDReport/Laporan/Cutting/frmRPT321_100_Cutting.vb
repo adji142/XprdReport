@@ -27,7 +27,7 @@ Public Class frmRPT321_100_Cutting
         FillCombo()
 
         cboLaporan.SelectedIndex = 0
-
+        cboStatus.SelectedIndex = 0
     End Sub
 
     'Fill Combo
@@ -113,7 +113,11 @@ Public Class frmRPT321_100_Cutting
         RPTObject.ParameterFields("TglAkhir").CurrentValues.AddValue(txtTglAkhir.Value.Date)
         RPTObject.ParameterFields("KodeShift").CurrentValues.AddValue(cboShift.ComboBox.SelectedValue.ToString)
         RPTObject.ParameterFields("KodeGrup").CurrentValues.AddValue(If(cboGrup.ComboBox.Text = "-", "", cboGrup.ComboBox.SelectedValue))
-
+        If cboStatus.ComboBox.SelectedIndex = 0 Then
+            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(0)
+        Else
+            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(1)
+        End If
         'Informasi
         RPTObject.DataDefinition.FormulaFields("UserID").Text = "'" + ActiveSession.KodeUser + "'"
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"

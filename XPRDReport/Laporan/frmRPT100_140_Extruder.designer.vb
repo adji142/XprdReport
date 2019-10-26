@@ -29,11 +29,8 @@ Partial Class frmRPT100_140_Extruder
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.cboTipeLaporan = New System.Windows.Forms.ToolStripComboBox()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.Toolbar = New System.Windows.Forms.ToolStrip()
         Me.btRefresh = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.CboStatus = New System.Windows.Forms.ToolStripComboBox()
         Me.Toolbar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -92,16 +89,11 @@ Partial Class frmRPT100_140_Extruder
         Me.cboTipeLaporan.Name = "cboTipeLaporan"
         Me.cboTipeLaporan.Size = New System.Drawing.Size(150, 31)
         '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 31)
-        '
         'Toolbar
         '
         Me.Toolbar.BackColor = System.Drawing.SystemColors.Control
         Me.Toolbar.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboTipeLaporan, Me.ToolStripSeparator6, Me.ToolStripLabel2, Me.CboStatus, Me.btRefresh})
+        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboTipeLaporan, Me.btRefresh})
         Me.Toolbar.Location = New System.Drawing.Point(0, 0)
         Me.Toolbar.Name = "Toolbar"
         Me.Toolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -119,19 +111,6 @@ Partial Class frmRPT100_140_Extruder
         Me.btRefresh.Size = New System.Drawing.Size(28, 28)
         Me.btRefresh.Text = "Tampilkan Laporan"
         Me.btRefresh.ToolTipText = " [F5]-Tampilkan Laporan"
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(39, 28)
-        Me.ToolStripLabel2.Text = "Status"
-        '
-        'CboStatus
-        '
-        Me.CboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CboStatus.Items.AddRange(New Object() {"Aktif", "Cancel"})
-        Me.CboStatus.Name = "CboStatus"
-        Me.CboStatus.Size = New System.Drawing.Size(121, 31)
         '
         'frmRPT100_140_Extruder
         '
@@ -157,11 +136,8 @@ Partial Class frmRPT100_140_Extruder
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents cboTipeLaporan As System.Windows.Forms.ToolStripComboBox
-    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents btRefresh As System.Windows.Forms.ToolStripButton
     Friend WithEvents Toolbar As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripLabel2 As System.Windows.Forms.ToolStripLabel
     Private WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents CboStatus As System.Windows.Forms.ToolStripComboBox
 
 End Class

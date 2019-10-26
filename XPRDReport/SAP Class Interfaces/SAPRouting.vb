@@ -12,10 +12,11 @@ Public Class SAPRouting : Implements IDataLookup
         Dim SQL As String
 
         SQL = "SELECT " +
-              "     ""Code""        AS ""Kode"", " +
-              "     ""Name""        AS ""Rounting"" " +
+              "     ""Code""              AS ""Kode"", " +
+              "     ""Name""              AS ""Rounting"", " +
+              "     ""U_HSP_ACCT""        AS ""Acct"" " +
               "FROM ""@SOL_ROUTING"" " +
-              "WHERE ""Code"" ||' '||""Name"" LIKE '%" + Kriteria + "%' " +
+              "WHERE ""Code"" ||' '||""Name"" LIKE '%" + Kriteria + "%' AND ""U_HSP_ACCT"" IS NOT NULL " +
               "ORDER BY ""Name"" "
 
         Using DBX As IDbConnection = DB.Connection()
@@ -30,7 +31,29 @@ Public Class SAPRouting : Implements IDataLookup
             Read = DS
         End Using
     End Function
+    Public Function Read_Account(ByVal Kriteria As String) As DataSet
+        Dim DB As New SAPDBConnection
+        Dim SQL As String
 
+        SQL = "SELECT " +
+              "     ""AcctCode""              AS ""Kode"", " +
+              "     ""AcctName""              AS ""Rounting"" " +
+              "FROM OACT " +
+              "WHERE LEFT(""AcctCode"",4) = '1163' " +
+              "ORDER BY ""AcctCode"" "
+
+        Using DBX As IDbConnection = DB.Connection()
+
+            Dim CMD As New HanaCommand(SQL, DBX)
+            Dim DA As New HanaDataAdapter
+            Dim DS As New DataSet
+
+            DA.SelectCommand = CMD
+            DA.Fill(DS, "View")
+
+            Read_Account = DS
+        End Using
+    End Function
     Public Function GetLookup(TextSearch As String, Parameter As Object) As DataSet Implements IDataLookup.GetLookup
         Dim DB As New SAPDBConnection
         Dim SQL As String

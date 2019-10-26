@@ -2,6 +2,7 @@
 Imports XPRDSystem.HSP.Data
 Namespace HSP.Data
     Public Class TempStockSAP
+        Public Property ID As String
         Public Property KodeItem As String
         Public Property NamaItem As String
         Public Property KodeProduksi As String
@@ -19,19 +20,19 @@ Namespace HSP.Data
             Dim SQL As String
 
             SQL = "INSERT INTO tempitemstocksap " +
-                  "(KodeItem, NamaItem, KodeProduksi, Qty) " +
+                  "(ID,KodeItem, NamaItem, KodeProduksi, Qty) " +
                   "VALUES " +
-                  "(@KodeItem, @NamaItem, @KodeProduksi, @Qty)"
+                  "(@ID,@KodeItem, @NamaItem, @KodeProduksi, @Qty)"
 
             Using DBX As IDbConnection = _DBConnection.Connection
                 Add = DBX.Execute(SQL, Data)
             End Using
         End Function
 
-        Public Function Delete() As Integer
+        Public Function Delete(ByVal ID As String) As Integer
             Dim SQL As String
 
-            SQL = "DELETE FROM tempitemstocksap "
+            SQL = "DELETE FROM tempitemstocksap WHERE ID = '" + ID + "'"
 
             Using DBX As IDbConnection = _DBConnection.Connection
                 Delete = DBX.Execute(SQL)

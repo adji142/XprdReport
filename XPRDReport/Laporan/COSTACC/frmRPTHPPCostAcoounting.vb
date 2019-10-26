@@ -25,12 +25,12 @@ Public Class frmRPTHPPCostAcoounting
         Dim DS As DataSet
 
         'Unit Produksi
-        Dim DaftarUnitProduksi As New DaftarUnitProduksi(ActiveSession)
+        Dim DaftarUnitProduksi As New SAPRouting()
 
-        DS = DaftarUnitProduksi.Read("%")
+        DS = DaftarUnitProduksi.Read_Account("%")
         cboUnitProduksi.ComboBox.DataSource = DS.Tables("View")
-        cboUnitProduksi.ComboBox.DisplayMember = "Unit Produksi"
-        cboUnitProduksi.ComboBox.ValueMember = "Unit SAP"
+        cboUnitProduksi.ComboBox.DisplayMember = "Rounting"
+        cboUnitProduksi.ComboBox.ValueMember = "Kode"
 
         cboUnitProduksi.ComboBox.SelectedIndex = cboUnitProduksi.Items.Count - 1
     End Sub

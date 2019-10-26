@@ -28,7 +28,7 @@ Partial Class frmRPT110_220_GudangBenang
         Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.cboKodeUnit = New System.Windows.Forms.ToolStripComboBox()
+        Me.cboKodeLokasi = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel7 = New System.Windows.Forms.ToolStripLabel()
         Me.cboShift = New System.Windows.Forms.ToolStripComboBox()
@@ -45,7 +45,7 @@ Partial Class frmRPT110_220_GudangBenang
         '
         Me.Toolbar.BackColor = System.Drawing.SystemColors.Control
         Me.Toolbar.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator5, Me.ToolStripLabel2, Me.cboKodeUnit, Me.ToolStripSeparator6, Me.ToolStripLabel7, Me.cboShift, Me.ToolStripSeparator3, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator1, Me.btRefresh})
+        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator5, Me.ToolStripLabel2, Me.cboKodeLokasi, Me.ToolStripSeparator6, Me.ToolStripLabel7, Me.cboShift, Me.ToolStripSeparator3, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator1, Me.btRefresh})
         Me.Toolbar.Location = New System.Drawing.Point(0, 0)
         Me.Toolbar.Name = "Toolbar"
         Me.Toolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -74,14 +74,14 @@ Partial Class frmRPT110_220_GudangBenang
         'ToolStripLabel2
         '
         Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(84, 28)
-        Me.ToolStripLabel2.Text = "&Unit Produksi :"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(95, 28)
+        Me.ToolStripLabel2.Text = "&Lokasi Produksi :"
         '
-        'cboKodeUnit
+        'cboKodeLokasi
         '
-        Me.cboKodeUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboKodeUnit.Name = "cboKodeUnit"
-        Me.cboKodeUnit.Size = New System.Drawing.Size(170, 31)
+        Me.cboKodeLokasi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboKodeLokasi.Name = "cboKodeLokasi"
+        Me.cboKodeLokasi.Size = New System.Drawing.Size(170, 31)
         '
         'ToolStripSeparator6
         '
@@ -183,15 +183,15 @@ Partial Class frmRPT110_220_GudangBenang
     Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripLabel3 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripLabel2 As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents cboKodeUnit As System.Windows.Forms.ToolStripComboBox
+    Friend WithEvents cboKodeLokasi As System.Windows.Forms.ToolStripComboBox
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripLabel7 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents cboShift As System.Windows.Forms.ToolStripComboBox
     Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents cboLaporan As System.Windows.Forms.ToolStripComboBox
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripLabel4 As System.Windows.Forms.ToolStripLabel
+    Private WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
 
 End Class

@@ -133,7 +133,6 @@ Public Class frmRPT312_120_BahanRollCementBag
         RPTObject.ParameterFields("KodeShift").CurrentValues.AddValue(cboShift.ComboBox.SelectedValue.ToString)
         RPTObject.ParameterFields("KodeGrup").CurrentValues.AddValue(If(cboGrup.ComboBox.Text = "-", "", cboGrup.ComboBox.SelectedValue))
         RPTObject.ParameterFields("KodeMesin").CurrentValues.AddValue(cboMesin.ComboBox.SelectedValue)
-
         'Informasi
         RPTObject.DataDefinition.FormulaFields("UserID").Text = "'" + ActiveSession.KodeUser + "'"
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"

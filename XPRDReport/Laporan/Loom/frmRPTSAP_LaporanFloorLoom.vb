@@ -24,6 +24,7 @@ Public Class frmRPTSAP_LaporanFloorLoom
         txtTglAkhir.Width = 95
         txtTglAkhir.Value = Now.Date
 
+        cboLaporan.SelectedIndex = 0
     End Sub
 
     'Tampilkan Laporan
@@ -49,7 +50,12 @@ Public Class frmRPTSAP_LaporanFloorLoom
         Dim RPTObject As New ReportDocument
 
         'Report
-        RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rptSAP_LaporanFloorLoom.rpt")
+        Select Case cboLaporan.SelectedIndex + 1
+            Case 1
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rptSAP_LaporanFloorLoom.rpt")
+            Case 2
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rptSAP_LaporanFloorLoom_b.rpt")
+        End Select
 
         For Each DataTable In RPTObject.Database.Tables
             DataTable.LogOnInfo.ConnectionInfo = Server

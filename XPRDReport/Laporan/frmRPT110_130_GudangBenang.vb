@@ -26,6 +26,7 @@ Public Class frmRPT110_130_GudangBenang
         FillComboMesin()
 
         cboLaporan.SelectedIndex = 0
+        cboStatus.SelectedIndex = 0
     End Sub
 
     'Fill Combo
@@ -148,7 +149,11 @@ Public Class frmRPT110_130_GudangBenang
         RPTObject.ParameterFields("Shift").CurrentValues.AddValue(cboShift.ComboBox.SelectedValue)
         RPTObject.ParameterFields("KodeUnit").CurrentValues.AddValue(cboKodeUnit.ComboBox.SelectedValue)
         RPTObject.ParameterFields("Mesin").CurrentValues.AddValue(cboMesin.ComboBox.SelectedValue)
-
+        If cboStatus.ComboBox.SelectedIndex = 0 Then
+            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(0)
+        Else
+            RPTObject.ParameterFields("StsTrx").CurrentValues.AddValue(1)
+        End If
         'Informasi
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"
 

@@ -31,7 +31,16 @@ Partial Class frmRPT2100_HasilCircularLoom
         Me.cboLaporan = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.Toolbar = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.cboStatus = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRefresh = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
+        Me.cboShift = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel6 = New System.Windows.Forms.ToolStripLabel()
+        Me.cboGroup = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.Toolbar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -86,7 +95,7 @@ Partial Class frmRPT2100_HasilCircularLoom
         'cboLaporan
         '
         Me.cboLaporan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboLaporan.Items.AddRange(New Object() {"2801", "2802", "2803", "2804", "2806", "2807", "2808"})
+        Me.cboLaporan.Items.AddRange(New Object() {"2801", "2802", "2803", "2804", "2805"})
         Me.cboLaporan.Name = "cboLaporan"
         Me.cboLaporan.Size = New System.Drawing.Size(150, 31)
         '
@@ -99,7 +108,7 @@ Partial Class frmRPT2100_HasilCircularLoom
         '
         Me.Toolbar.BackColor = System.Drawing.SystemColors.Control
         Me.Toolbar.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator6, Me.btRefresh})
+        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator1, Me.ToolStripLabel5, Me.cboShift, Me.ToolStripSeparator3, Me.ToolStripLabel6, Me.cboGroup, Me.ToolStripSeparator4, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator6, Me.ToolStripLabel2, Me.cboStatus, Me.ToolStripSeparator2, Me.btRefresh})
         Me.Toolbar.Location = New System.Drawing.Point(0, 0)
         Me.Toolbar.Name = "Toolbar"
         Me.Toolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -107,6 +116,24 @@ Partial Class frmRPT2100_HasilCircularLoom
         Me.Toolbar.TabIndex = 4
         Me.Toolbar.TabStop = True
         Me.Toolbar.Text = "ToolStrip1"
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(90, 28)
+        Me.ToolStripLabel2.Text = "Status Transaksi"
+        '
+        'cboStatus
+        '
+        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatus.Items.AddRange(New Object() {"Aktif", "Cancel"})
+        Me.cboStatus.Name = "cboStatus"
+        Me.cboStatus.Size = New System.Drawing.Size(121, 31)
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 31)
         '
         'btRefresh
         '
@@ -117,6 +144,40 @@ Partial Class frmRPT2100_HasilCircularLoom
         Me.btRefresh.Size = New System.Drawing.Size(28, 28)
         Me.btRefresh.Text = "Tampilkan Laporan"
         Me.btRefresh.ToolTipText = " [F5]-Tampilkan Laporan"
+        '
+        'ToolStripLabel5
+        '
+        Me.ToolStripLabel5.Name = "ToolStripLabel5"
+        Me.ToolStripLabel5.Size = New System.Drawing.Size(31, 28)
+        Me.ToolStripLabel5.Text = "Shift"
+        '
+        'cboShift
+        '
+        Me.cboShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboShift.Name = "cboShift"
+        Me.cboShift.Size = New System.Drawing.Size(121, 31)
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 31)
+        '
+        'ToolStripLabel6
+        '
+        Me.ToolStripLabel6.Name = "ToolStripLabel6"
+        Me.ToolStripLabel6.Size = New System.Drawing.Size(40, 28)
+        Me.ToolStripLabel6.Text = "Group"
+        '
+        'cboGroup
+        '
+        Me.cboGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboGroup.Name = "cboGroup"
+        Me.cboGroup.Size = New System.Drawing.Size(121, 31)
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 31)
         '
         'frmRPT2100_HasilCircularLoom
         '
@@ -146,5 +207,14 @@ Partial Class frmRPT2100_HasilCircularLoom
     Friend WithEvents btRefresh As System.Windows.Forms.ToolStripButton
     Friend WithEvents Toolbar As System.Windows.Forms.ToolStrip
     Private WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents ToolStripLabel2 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents cboStatus As System.Windows.Forms.ToolStripComboBox
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripLabel5 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents cboShift As System.Windows.Forms.ToolStripComboBox
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripLabel6 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents cboGroup As System.Windows.Forms.ToolStripComboBox
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
 
 End Class

@@ -40,6 +40,9 @@ Partial Class frmRPT312_130_HasilCementBag
         Me.cboMesin = New System.Windows.Forms.ToolStripComboBox()
         Me.btRefresh = New System.Windows.Forms.ToolStripButton()
         Me.RPT = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel6 = New System.Windows.Forms.ToolStripLabel()
+        Me.cboStatus = New System.Windows.Forms.ToolStripComboBox()
         Me.Toolbar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,7 +50,7 @@ Partial Class frmRPT312_130_HasilCementBag
         '
         Me.Toolbar.BackColor = System.Drawing.SystemColors.Control
         Me.Toolbar.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator6, Me.ToolStripLabel7, Me.cboShift, Me.ToolStripSeparator3, Me.ToolStripLabel5, Me.cboGrup, Me.ToolStripSeparator2, Me.ToolStripLabel2, Me.cboMesin, Me.btRefresh})
+        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator6, Me.ToolStripLabel7, Me.cboShift, Me.ToolStripSeparator3, Me.ToolStripLabel5, Me.cboGrup, Me.ToolStripSeparator2, Me.ToolStripLabel2, Me.cboMesin, Me.ToolStripSeparator4, Me.ToolStripLabel6, Me.cboStatus, Me.btRefresh})
         Me.Toolbar.Location = New System.Drawing.Point(0, 0)
         Me.Toolbar.Name = "Toolbar"
         Me.Toolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -172,6 +175,24 @@ Partial Class frmRPT312_130_HasilCementBag
         Me.RPT.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         Me.RPT.ToolPanelWidth = 250
         '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 31)
+        '
+        'ToolStripLabel6
+        '
+        Me.ToolStripLabel6.Name = "ToolStripLabel6"
+        Me.ToolStripLabel6.Size = New System.Drawing.Size(90, 28)
+        Me.ToolStripLabel6.Text = "Status Transaksi"
+        '
+        'cboStatus
+        '
+        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatus.Items.AddRange(New Object() {"Aktif", "Cancel"})
+        Me.cboStatus.Name = "cboStatus"
+        Me.cboStatus.Size = New System.Drawing.Size(121, 31)
+        '
         'frmRPT312_130_HasilCementBag
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -208,5 +229,8 @@ Partial Class frmRPT312_130_HasilCementBag
     Friend WithEvents ToolStripLabel2 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents cboMesin As System.Windows.Forms.ToolStripComboBox
     Private WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripLabel6 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents cboStatus As System.Windows.Forms.ToolStripComboBox
 
 End Class

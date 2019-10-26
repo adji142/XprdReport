@@ -158,6 +158,8 @@ Public Class frmRPT500_110_PemakaianBahanBmf
                 RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt500122_Bmf.RPT")
             Case 3
                 RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt500123_Bmf.RPT")
+            Case 4
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt500124_Bmf.RPT")
         End Select
 
         For Each DataTable In RPTObject.Database.Tables

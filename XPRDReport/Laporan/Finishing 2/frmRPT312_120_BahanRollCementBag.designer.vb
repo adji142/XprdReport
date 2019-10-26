@@ -36,10 +36,10 @@ Partial Class frmRPT312_120_BahanRollCementBag
         Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
         Me.cboGrup = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.RPT = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.btRefresh = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.cboMesin = New System.Windows.Forms.ToolStripComboBox()
+        Me.btRefresh = New System.Windows.Forms.ToolStripButton()
+        Me.RPT = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Toolbar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -125,6 +125,28 @@ Partial Class frmRPT312_120_BahanRollCementBag
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 31)
         '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(48, 28)
+        Me.ToolStripLabel2.Text = "Mesin : "
+        '
+        'cboMesin
+        '
+        Me.cboMesin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboMesin.Name = "cboMesin"
+        Me.cboMesin.Size = New System.Drawing.Size(100, 31)
+        '
+        'btRefresh
+        '
+        Me.btRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btRefresh.Image = CType(resources.GetObject("btRefresh.Image"), System.Drawing.Image)
+        Me.btRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btRefresh.Name = "btRefresh"
+        Me.btRefresh.Size = New System.Drawing.Size(28, 28)
+        Me.btRefresh.Text = "Tampilkan Laporan"
+        Me.btRefresh.ToolTipText = " [F5]-Tampilkan Laporan"
+        '
         'RPT
         '
         Me.RPT.ActiveViewIndex = -1
@@ -149,28 +171,6 @@ Partial Class frmRPT312_120_BahanRollCementBag
         Me.RPT.TabIndex = 3
         Me.RPT.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         Me.RPT.ToolPanelWidth = 250
-        '
-        'btRefresh
-        '
-        Me.btRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btRefresh.Image = CType(resources.GetObject("btRefresh.Image"), System.Drawing.Image)
-        Me.btRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btRefresh.Name = "btRefresh"
-        Me.btRefresh.Size = New System.Drawing.Size(28, 28)
-        Me.btRefresh.Text = "Tampilkan Laporan"
-        Me.btRefresh.ToolTipText = " [F5]-Tampilkan Laporan"
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(48, 28)
-        Me.ToolStripLabel2.Text = "Mesin : "
-        '
-        'cboMesin
-        '
-        Me.cboMesin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboMesin.Name = "cboMesin"
-        Me.cboMesin.Size = New System.Drawing.Size(100, 31)
         '
         'frmRPT312_120_BahanRollCementBag
         '

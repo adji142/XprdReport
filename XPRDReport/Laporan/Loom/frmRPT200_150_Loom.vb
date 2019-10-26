@@ -60,6 +60,7 @@ Public Class frmRPT200_150_Loom
         DS = SAP.ReadWOPlanQty(New DaftarUnitProduksi(ActiveSession).Find(cboKodeUnit.ComboBox.SelectedValue).KodeUnitSAP, cboNomorWO.ComboBox.SelectedValue)
 
         Dim DaftarRptPlanWO As New DaftarRptPlanWO(ActiveSession)
+
         Dim RptPlanWO As New RptPlanWO
 
         Dim Record As Integer = DS.Tables("View").Rows.Count
