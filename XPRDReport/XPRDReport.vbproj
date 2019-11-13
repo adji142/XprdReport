@@ -5,13 +5,12 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1B126AAB-2D4A-4DA0-B4C5-C9A8CCA5B533}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <StartupObject>
-    </StartupObject>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>XPRDReport.My.MyApplication</StartupObject>
     <RootNamespace>XPRDReport</RootNamespace>
     <AssemblyName>XPRDReport</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>Windows</MyType>
+    <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -311,6 +310,12 @@
       <DependentUpon>frmRPT321_150_Cutting.vb</DependentUpon>
     </Compile>
     <Compile Include="Laporan\Cutting\frmRPT321_150_Cutting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\extruder\frmRPT00101_HasilExtruder.designer.vb">
+      <DependentUpon>frmRPT00101_HasilExtruder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\extruder\frmRPT00101_HasilExtruder.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laporan\Finishing 2\frmRPT310_100_Laminating.designer.vb">
@@ -925,6 +930,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan\Cutting\frmRPT321_150_Cutting.resx">
       <DependentUpon>frmRPT321_150_Cutting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\extruder\frmRPT00101_HasilExtruder.resx">
+      <DependentUpon>frmRPT00101_HasilExtruder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan\Finishing 2\frmRPT310_100_Laminating.resx">
       <DependentUpon>frmRPT310_100_Laminating.vb</DependentUpon>

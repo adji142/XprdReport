@@ -98,6 +98,7 @@ D:\Project\PT. Hardo Soloplast\XPRDReport\XPRDReport\obj\Debug\XPRDReport.pdb
 D:\Project\PT. Hardo Soloplast\XPRDReport\XPRDReport\bin\Debug\XPRDReport.dll.config
 D:\Project\PT. Hardo Soloplast\XPRDReport\XPRDReport\bin\Debug\XPRDReport.dll
 D:\Project\PT. Hardo Soloplast\XPRDReport\XPRDReport\obj\Debug\XPRDReport.dll
+D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT00101_HasilExtruder.resources
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\Interop.SAPbobsCOM.dll
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.vbproj.ResolveComReference.cache
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmLookup.resources
@@ -111,6 +112,8 @@ D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT329_110_StockB
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT329_150_PackingKarung.resources
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT400_100_PenyerahanHasilProduksi.resources
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT410_100_ReturHasilProduksi.resources
+D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPTTransformBalltoPcs.resources
+D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmStockBallpress.resources
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT500_100_BenangMultifilament.resources
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT500_110_PemakaianBahanBmf.resources
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT500_130_StockHasilBenangMultifilament_FloorBMF.resources
@@ -212,7 +215,6 @@ D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT320_130_Printi
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPT320_150_PrintingRoll.resources
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.Resources.resources
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.vbproj.GenerateResource.Cache
-D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.pdb
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\XPRDReport.pdb
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\XPRDReport.xml
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\Dapper.dll
@@ -224,8 +226,8 @@ D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\Dapper.xml
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\XPRDInterface.pdb
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\XPRDInterface.xml
 D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.xml
-D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmStockBallpress.resources
-D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.frmRPTTransformBalltoPcs.resources
-D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\XPRDReport.dll.config
-D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\XPRDReport.dll
-D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.dll
+D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.pdb
+D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.vbprojResolveAssemblyReference.cache
+D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\XPRDReport.exe.config
+D:\AJI\HSPPoject\XPRDReport\XPRDReport\bin\Debug\XPRDReport.exe
+D:\AJI\HSPPoject\XPRDReport\XPRDReport\obj\Debug\XPRDReport.exe

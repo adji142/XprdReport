@@ -130,7 +130,7 @@ Partial Class frmRPT100_120_PemakaianBahanExtruder
         'cboTipeLaporan
         '
         Me.cboTipeLaporan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboTipeLaporan.Items.AddRange(New Object() {"100121", "100122", "100123", "100124", "100125"})
+        Me.cboTipeLaporan.Items.AddRange(New Object() {"100121", "100122", "100123", "100124", "100125", "100126"})
         Me.cboTipeLaporan.Name = "cboTipeLaporan"
         Me.cboTipeLaporan.Size = New System.Drawing.Size(150, 31)
         '
@@ -196,7 +196,6 @@ Partial Class frmRPT100_120_PemakaianBahanExtruder
     Friend WithEvents Toolbar As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripLabel3 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripLabel4 As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripLabel7 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents cboShift As System.Windows.Forms.ToolStripComboBox
@@ -210,5 +209,6 @@ Partial Class frmRPT100_120_PemakaianBahanExtruder
     Friend WithEvents ToolStripLabel2 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents cboKodeUnit As System.Windows.Forms.ToolStripComboBox
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Private WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
 
 End Class

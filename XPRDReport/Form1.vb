@@ -805,4 +805,13 @@
         'frmformDO.Dock = DockStyle.Fill
         ifrmChild.Show()
     End Sub
+
+    Private Sub LapHasilEXTByStatusQCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LapHasilEXTByStatusQCToolStripMenuItem.Click
+        Dim ifrmChild As New frmRPT00101_HasilExtruder
+        IsMdiContainer = True
+        ifrmChild.MdiParent = Me
+        'frmformDO.Dock = DockStyle.Fill
+        ifrmChild.Show()
+
+    End Sub
 End Class

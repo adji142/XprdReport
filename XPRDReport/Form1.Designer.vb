@@ -49,6 +49,7 @@ Partial Class Form1
         Me.R110230LapDetailPengeluaranBenangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LapReturBenangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LapTransformBenangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LapKartuStockSupportPPICToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CircularLoomToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LapProduksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.R200130LapAnalisaProduksiLoomToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -157,11 +158,11 @@ Partial Class Form1
         Me.AnalisaRollToRollPrintingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AnalisaRollToPcsCuttingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AnalisaRollToPcsCBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AnalisaAfvalVsBSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GudangIndukToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReturHasilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PeformaPenyerahanHasilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AnalisaAfvalVsBSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LapKartuStockSupportPPICToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LapHasilEXTByStatusQCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -176,7 +177,7 @@ Partial Class Form1
         '
         'ExtruderToolStripMenuItem
         '
-        Me.ExtruderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PemakaianBahanExtruderToolStripMenuItem, Me.R100100LapStockBahanFloorToolStripMenuItem, Me.R110130LapPenerimaanGudangBenangToolStripMenuItem, Me.R100110LapInventoryTransferToolStripMenuItem, Me.R100150LapPenyelesaianWOExtruderToolStripMenuItem, Me.RDP1310LapRekapHasilProduksiExtruderToolStripMenuItem, Me.RDP1200LapDowntimeProduksiExtruderToolStripMenuItem, Me.RDP1300LapRangkumanProduksiExtruderToolStripMenuItem, Me.RDP1400LapPersonnelProduksiExtruderToolStripMenuItem, Me.RDP1000LapPremiExtruderToolStripMenuItem, Me.AnalisaExtruderToolStripMenuItem, Me.GrafikExtruderToolStripMenuItem})
+        Me.ExtruderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PemakaianBahanExtruderToolStripMenuItem, Me.R100100LapStockBahanFloorToolStripMenuItem, Me.R110130LapPenerimaanGudangBenangToolStripMenuItem, Me.R100110LapInventoryTransferToolStripMenuItem, Me.R100150LapPenyelesaianWOExtruderToolStripMenuItem, Me.RDP1310LapRekapHasilProduksiExtruderToolStripMenuItem, Me.RDP1200LapDowntimeProduksiExtruderToolStripMenuItem, Me.RDP1300LapRangkumanProduksiExtruderToolStripMenuItem, Me.RDP1400LapPersonnelProduksiExtruderToolStripMenuItem, Me.RDP1000LapPremiExtruderToolStripMenuItem, Me.AnalisaExtruderToolStripMenuItem, Me.GrafikExtruderToolStripMenuItem, Me.LapHasilEXTByStatusQCToolStripMenuItem})
         Me.ExtruderToolStripMenuItem.Name = "ExtruderToolStripMenuItem"
         Me.ExtruderToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.ExtruderToolStripMenuItem.Text = "Extruder"
@@ -331,6 +332,12 @@ Partial Class Form1
         Me.LapTransformBenangToolStripMenuItem.Name = "LapTransformBenangToolStripMenuItem"
         Me.LapTransformBenangToolStripMenuItem.Size = New System.Drawing.Size(372, 22)
         Me.LapTransformBenangToolStripMenuItem.Text = "Lap. Transform Benang"
+        '
+        'LapKartuStockSupportPPICToolStripMenuItem
+        '
+        Me.LapKartuStockSupportPPICToolStripMenuItem.Name = "LapKartuStockSupportPPICToolStripMenuItem"
+        Me.LapKartuStockSupportPPICToolStripMenuItem.Size = New System.Drawing.Size(372, 22)
+        Me.LapKartuStockSupportPPICToolStripMenuItem.Text = "Lap. Kartu Stock Support PPIC"
         '
         'CircularLoomToolStripMenuItem
         '
@@ -999,6 +1006,12 @@ Partial Class Form1
         Me.AnalisaRollToPcsCBToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
         Me.AnalisaRollToPcsCBToolStripMenuItem.Text = "Analisa Roll to Pcs CB"
         '
+        'AnalisaAfvalVsBSToolStripMenuItem
+        '
+        Me.AnalisaAfvalVsBSToolStripMenuItem.Name = "AnalisaAfvalVsBSToolStripMenuItem"
+        Me.AnalisaAfvalVsBSToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.AnalisaAfvalVsBSToolStripMenuItem.Text = "Analisa Afval vs BS"
+        '
         'GudangIndukToolStripMenuItem
         '
         Me.GudangIndukToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReturHasilToolStripMenuItem, Me.PeformaPenyerahanHasilToolStripMenuItem})
@@ -1018,17 +1031,11 @@ Partial Class Form1
         Me.PeformaPenyerahanHasilToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
         Me.PeformaPenyerahanHasilToolStripMenuItem.Text = "Peforma penyerahan Hasil"
         '
-        'AnalisaAfvalVsBSToolStripMenuItem
+        'LapHasilEXTByStatusQCToolStripMenuItem
         '
-        Me.AnalisaAfvalVsBSToolStripMenuItem.Name = "AnalisaAfvalVsBSToolStripMenuItem"
-        Me.AnalisaAfvalVsBSToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
-        Me.AnalisaAfvalVsBSToolStripMenuItem.Text = "Analisa Afval vs BS"
-        '
-        'LapKartuStockSupportPPICToolStripMenuItem
-        '
-        Me.LapKartuStockSupportPPICToolStripMenuItem.Name = "LapKartuStockSupportPPICToolStripMenuItem"
-        Me.LapKartuStockSupportPPICToolStripMenuItem.Size = New System.Drawing.Size(372, 22)
-        Me.LapKartuStockSupportPPICToolStripMenuItem.Text = "Lap. Kartu Stock Support PPIC"
+        Me.LapHasilEXTByStatusQCToolStripMenuItem.Name = "LapHasilEXTByStatusQCToolStripMenuItem"
+        Me.LapHasilEXTByStatusQCToolStripMenuItem.Size = New System.Drawing.Size(321, 22)
+        Me.LapHasilEXTByStatusQCToolStripMenuItem.Text = "00101 - Lap Hasil EXT By Status QC"
         '
         'Form1
         '
@@ -1186,5 +1193,6 @@ Partial Class Form1
     Friend WithEvents AnalisaRollToPcsCBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AnalisaAfvalVsBSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LapKartuStockSupportPPICToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LapHasilEXTByStatusQCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -45,6 +45,11 @@
         oApp(0) = "EXT001"
         oApp(1) = "Extruder | Grafik Afval Extruder"
 
+        oApp = oDT.Rows.Add()
+        oApp(0) = "EXT002"
+        oApp(1) = "Extruder | Lap. Hasil Extruder By Status SQ"
+
+
         '*************************************************************************
         'Benang Multifilamen
         '*************************************************************************
@@ -706,7 +711,8 @@
                 AppForm = New frmRPTTransformBalltoPcs
             Case "BL002"
                 AppForm = New frmStockBallpress
-
+            Case "EXT002"
+                AppForm = New frmRPT00101_HasilExtruder
 
         End Select
         Form = AppForm

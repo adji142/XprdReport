@@ -6,6 +6,8 @@ Imports XPRDReport.HSP.Data
 
 Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
     Private ID As String
+    Private WithEvents txtTglAwal As New DateTimePicker
+    Private WithEvents txtTglAkhir As New DateTimePicker
 
     Private Sub FillCombo()
         Dim DaftarLokasiProduksi As New DaftarLokasi(ActiveSession)
@@ -28,6 +30,21 @@ Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         RPT.ShowGroupTreeButton = False
 
         FillCombo()
+
+        Toolbar.Items.Insert(1, New ToolStripControlHost(txtTglAwal))
+        txtTglAwal.Format = DateTimePickerFormat.Custom
+        txtTglAwal.CustomFormat = "dd/MM/yyyy"
+        txtTglAwal.Width = 95
+
+        Toolbar.Items.Insert(3, New ToolStripControlHost(txtTglAkhir))
+        txtTglAkhir.Format = DateTimePickerFormat.Custom
+        txtTglAkhir.CustomFormat = "dd/MM/yyyy"
+        txtTglAkhir.Width = 95
+
+        txtTglAkhir.Visible = False
+        txtTglAwal.Visible = False
+        ToolStripLabel3.Visible = False
+        ToolStripLabel4.Visible = False
 
         cboLaporan.SelectedIndex = 0
         ProgressBar.Visible = False
@@ -97,13 +114,20 @@ Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
                 RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt500131_Bmf.RPT")
             Case 2
                 RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt500132_Bmf.RPT")
+            Case 3
+                RPTObject.Load(System.AppDomain.CurrentDomain.BaseDirectory() + "\Reports\System\rpt500133_Bmf.RPT")
         End Select
 
         For Each DataTable In RPTObject.Database.Tables
             DataTable.LogOnInfo.ConnectionInfo = Server
             DataTable.ApplyLogOnInfo(DataTable.LogOnInfo)
         Next
-        RPTObject.ParameterFields("ID").CurrentValues.AddValue(ID)
+        If cboLaporan.SelectedIndex + 1 = 3 Then
+            RPTObject.ParameterFields("TglAwal").CurrentValues.AddValue(txtTglAwal.Value.Date)
+            RPTObject.ParameterFields("TglAkhir").CurrentValues.AddValue(txtTglAkhir.Value.Date)
+        Else
+            RPTObject.ParameterFields("ID").CurrentValues.AddValue(ID)
+        End If
         'Informasi
         RPTObject.DataDefinition.FormulaFields("UserID").Text = "'" + ActiveSession.KodeUser + "'"
         RPTObject.DataDefinition.FormulaFields("NamaPerusahaan").Text = "'" + UCase(ActiveSession.NamaPerusahaan) + "'"
@@ -127,5 +151,19 @@ Public Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
                 tab.Appearance = TabAppearance.Buttons
             End If
         Next
+    End Sub
+
+    Private Sub cboLaporan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboLaporan.SelectedIndexChanged
+        If cboLaporan.SelectedIndex + 1 = 3 Then
+            txtTglAkhir.Visible = True
+            txtTglAwal.Visible = True
+            ToolStripLabel3.Visible = True
+            ToolStripLabel4.Visible = True
+        Else
+            txtTglAkhir.Visible = False
+            txtTglAwal.Visible = False
+            ToolStripLabel3.Visible = False
+            ToolStripLabel4.Visible = False
+        End If
     End Sub
 End Class

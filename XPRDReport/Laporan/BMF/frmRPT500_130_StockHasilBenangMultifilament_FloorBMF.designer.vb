@@ -34,6 +34,9 @@ Partial Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ProgressBar = New System.Windows.Forms.ToolStripProgressBar()
         Me.RPT = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.Toolbar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,7 +44,7 @@ Partial Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         '
         Me.Toolbar.BackColor = System.Drawing.SystemColors.Control
         Me.Toolbar.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel2, Me.cboKodeLokasi, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator6, Me.btRefresh, Me.ToolStripSeparator2, Me.ProgressBar})
+        Me.Toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel4, Me.ToolStripSeparator3, Me.ToolStripLabel2, Me.cboKodeLokasi, Me.ToolStripSeparator1, Me.ToolStripLabel1, Me.cboLaporan, Me.ToolStripSeparator6, Me.btRefresh, Me.ToolStripSeparator2, Me.ProgressBar})
         Me.Toolbar.Location = New System.Drawing.Point(0, 0)
         Me.Toolbar.Name = "Toolbar"
         Me.Toolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -77,7 +80,7 @@ Partial Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         'cboLaporan
         '
         Me.cboLaporan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboLaporan.Items.AddRange(New Object() {"500131", "500132"})
+        Me.cboLaporan.Items.AddRange(New Object() {"500131", "500132", "500133"})
         Me.cboLaporan.Name = "cboLaporan"
         Me.cboLaporan.Size = New System.Drawing.Size(150, 31)
         '
@@ -131,7 +134,24 @@ Partial Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         Me.RPT.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         Me.RPT.ToolPanelWidth = 250
         '
-        'frmRPT500_130_StockHasilBenangMultifilament
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(55, 28)
+        Me.ToolStripLabel3.Text = "Tanggal :"
+        '
+        'ToolStripLabel4
+        '
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(24, 28)
+        Me.ToolStripLabel4.Text = "s/d"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 31)
+        '
+        'frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -141,7 +161,7 @@ Partial Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
         Me.Controls.Add(Me.Toolbar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Name = "frmRPT500_130_StockHasilBenangMultifilament"
+        Me.Name = "frmRPT500_130_StockHasilBenangMultifilament_FloorBMF"
         Me.Text = "Laporan Stock Hasil Benang Multifilament"
         Me.Toolbar.ResumeLayout(False)
         Me.Toolbar.PerformLayout()
@@ -161,5 +181,8 @@ Partial Class frmRPT500_130_StockHasilBenangMultifilament_FloorBMF
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Private WithEvents RPT As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents ToolStripLabel3 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents ToolStripLabel4 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
 
 End Class
